@@ -8,13 +8,10 @@ from rich import print
 
 load_dotenv()
 
-api_key = os.environ["DEEPSEEK_API_KEY"]
+api_key = os.environ["GEMINI_API_KEY"]
 
 llm = ChatLiteLLM(
-    model="deepseek/deepseek-chat",
-    api_key=api_key,
-    api_base="https://api.deepseek.com/v1",
-    temperature=0,
+    model="gemini/gemma-3-27b-it",
 )
 
 # Define the Google Calendar tool

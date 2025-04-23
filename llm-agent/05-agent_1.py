@@ -6,18 +6,24 @@ from langchain_community.tools import WikipediaQueryRun
 from langchain_community.tools import DuckDuckGoSearchRun
 from langchain_community.utilities import WikipediaAPIWrapper
 from langchain_experimental.tools import PythonREPLTool
+from litellm import completion
 import os
 from rich import print
 
 load_dotenv()
 
-api_key = os.environ["DEEPSEEK_API_KEY"]
+# api_key = os.environ["DEEPSEEK_API_KEY"]
+
+# llm = ChatLiteLLM(
+#     model="deepseek/deepseek-chat",
+#     api_key=api_key,
+#     api_base="https://api.deepseek.com/v1",
+#     temperature=0,
+# )
+api_key = os.environ["GEMINI_API_KEY"]
 
 llm = ChatLiteLLM(
-    model="deepseek/deepseek-chat",
-    api_key=api_key,
-    api_base="https://api.deepseek.com/v1",
-    temperature=0,
+    model="gemini/gemma-3-27b-it",
 )
 
 # Tool 1: DuckDuckGo Search
@@ -60,4 +66,4 @@ agent = initialize_agent(
 
 # Run the agent with a sample query
 response = agent.invoke("What's the current population of Vietnam? Calculate the ratio of population between India and vietnam?")
-print(response)
+print(response['output'])

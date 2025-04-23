@@ -7,13 +7,10 @@ import os
 from rich import print
 
 load_dotenv()
-api_key = os.environ["OPENAI_API_KEY"]
-#os.environ["OPENAI_API_KEY"] = api_key
+api_key = os.environ["GEMINI_API_KEY"]
 
 llm = ChatLiteLLM(
-    model="openai/gpt-4o-mini",
-    #api_key=api_key,
-    #api_base="https://api.groq.com/openai/v1",
+    model="gemini/gemini-2.5-flash-preview-04-17",
 )
 @tool
 def dummy_tool(query: str) -> str:
@@ -30,4 +27,4 @@ agent = initialize_agent(
 )
 
 # Run the agent with a sample query
-print(agent.run("When is my next meeting?"))
+print(agent.invoke("When is my next meeting?"))
