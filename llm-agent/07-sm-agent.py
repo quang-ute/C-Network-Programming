@@ -34,37 +34,7 @@ query0 = """
 Plot chart to visualize network packet travel time from this computer to google.com, amazon.com, and facebook.com by
 sending at least 10 ICMP packets to each target, do NOT use a bar chart.
 """
-analytic_queries =[
-    """ 
-        Analyze 'analyzer_1500.csv' file.
-        Plot bar chart to visualize event counts by 'analyzer_name'
-    """,
-    """ 
-        Analyze 'analyzer_1500.csv' file.
-        Plot bar chart to visualize event counts by source ip 
-    """,
-    """ 
-        Analyze 'analyzer_1500.csv' file.
-        Plot bar chart to visualize which most targeted IPs 
-    """,
-    """ 
-        Analyze 'analyzer_1500.csv' file.
-        Plot bar chart to visualize unique source-to-destination to map communication attemps. 
-        Use multiple color for bars to represent the heat map of communication.
-    """,
-    """ 
-        Analyze 'analyzer_1500.csv' file.
-        Plot bar chart to visualize unique source to destination ports to identify patterns.
-    """,
-    """ 
-        Analyze 'analyzer_1500.csv' file.
-        Plot bar chart to visualize top destination IP for remote desktop service.
-    """,
-    """ 
-        Analyze 'analyzer_1500.csv' file.
-        Plot bar chart to visualize source-to-destination pairs and occurences for remote desktop service.
-    """,
-] 
+
 query1 = """
 How long would it take for a puma to cross the united states from florida to california?
 """
